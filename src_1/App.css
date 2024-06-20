@@ -1,0 +1,123 @@
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/polka-dots.png');
+  background-color: #f4f4f9;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ヘッダーのスタイル */
+/* h1 {
+  text-align: center;
+  color: #444;
+  padding: 20px 0;
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: bold;
+  background-color: #ffffffdd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.line {
+  text-decoration: none;
+  color: inherit; /* リンクの色を通常のテキスト色と同じにする */
+}
+
+/* アプリ全体のスタイル */
+.App {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* 入出金履歴のスタイル */
+.TransactionList, .TransactionSummary {
+  margin-bottom: 20px;
+}
+
+.TransactionList ul, .TransactionSummary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.TransactionList li, .TransactionSummary li {
+  background-color: #f9f9f9;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.TransactionList li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.TransactionList li:nth-child(odd), .TransactionSummary li:nth-child(odd) {
+  background-color: #e6f7ff;
+}
+
+.TransactionList a, .TransactionSummary a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.TransactionList a:hover, .TransactionSummary a:hover {
+  text-decoration: underline;
+}
+
+/* 月ごとの入出金履歴を横並びにするためのスタイル */
+.TransactionSummary ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.TransactionSummary li {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.TransactionSummary select {
+  padding: 5px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+/* 詳細ページのスタイル */
+.TransactionDetail {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.TransactionDetail p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.TransactionDetail a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.TransactionDetail a:hover {
+  text-decoration: underline;
+}
