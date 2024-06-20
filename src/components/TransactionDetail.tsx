@@ -1,3 +1,4 @@
+//取引明細の詳細画面
 import React from 'react';             // リアクトライブラリからReactをインポートする。"リアクトセット" は具体的でない
 import { useParams, Link } from 'react-router-dom';         //react-router-domライブラリからuseParamsフックとLinkコンポーネントをインポートする
 
