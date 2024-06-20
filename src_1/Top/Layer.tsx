@@ -42,25 +42,12 @@ export default function ResponsiveDrawer() {
     }
   };
 
-  const drawer = (
+  const drawer = (//リスト
     <div>
       <Toolbar />
-      <Divider />
+      <Divider />{/*線*/}
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {['入出金履歴', '月ごとの入出金履歴', '登録フォーム'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -76,8 +63,9 @@ export default function ResponsiveDrawer() {
 
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex',bgcolor:(thema)=> thema.palette.grey[100],minHeight:"100vh" }}>
       <CssBaseline />
+      {/*ヘッダー */}
       <AppBar
         position="fixed"
         sx={{
@@ -100,12 +88,14 @@ export default function ResponsiveDrawer() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box
+
+      {/*サイドバー*/}
+      <Box 
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-       
+       {/*モバイル用*/}
         <Drawer
           variant="temporary"
           open={mobileOpen}
@@ -121,6 +111,8 @@ export default function ResponsiveDrawer() {
         >
           {drawer}
         </Drawer>
+
+        {/*PC用*/}
         <Drawer
           variant="permanent"
           sx={{
@@ -132,6 +124,8 @@ export default function ResponsiveDrawer() {
           {drawer}
         </Drawer>
       </Box>
+
+       {/*メインコンテンツ*/}
       <Box
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
