@@ -1,6 +1,3 @@
-//レイアウトコンポーネントです。アプリケーションの共通レイアウト（ナビゲーションバー、フッターなど）を定義
-
-import React from 'react';
 import '../styles/globals.css'; // グローバルスタイルのインポート
 
 interface LayoutProps {
@@ -16,9 +13,19 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body>
-        <header>家計簿アプリ</header>
-        <main>{children}</main>
-        <footer>Footer</footer>
+        <header className="navbar">
+          <div className="container">
+            <h1>家計簿アプリ</h1>
+          </div>
+        </header>
+        <main className="container">
+          {children}
+        </main>
+        <footer className="footer">
+          <div className="container">
+            <p>&copy; 2024 家計簿アプリ</p>
+          </div>
+        </footer>
       </body>
     </html>
   );

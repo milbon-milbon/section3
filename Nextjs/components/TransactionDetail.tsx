@@ -1,11 +1,13 @@
 
-"use client"; // これをファイルの最初に追加
-import React from 'react'; // Reactをインポート
+//取引の詳細情報を表示するコンポーネント
+"use client"; // クライアントコンポーネントであることを指定
+
+
 import { Transaction } from '../types'; // '../types'から' 'Transaction'型をインポート
 import Link from 'next/link'; // Next.jsのLinkコンポーネントをインポート
 
-interface TransactionDetailProps { // TransactionDetailコンポーネントのプロパティの型を定義
-  transaction: Transaction; // transactionプロパティはTransaction型
+interface TransactionDetailProps { // TransactionDetailコンポーネントのプロパティの型を定義。受け取る型を定義。
+  transaction: Transaction; // TypeScriptの型注釈（type annotation）を使ってプロパティの型を定義.。Transaction型は、取引（トランザクション）データの構造を定義した型
 }
 
 const TransactionDetail: React.FC<TransactionDetailProps> = ({ transaction }) => { // TransactionDetailって名前のReact Functional Componentを定義

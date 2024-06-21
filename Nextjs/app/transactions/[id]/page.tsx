@@ -4,17 +4,17 @@
 import React, { useEffect, useState } from 'react'; // ReactとuseEffect, useStateフックをインポート
 import { usePathname } from 'next/navigation'; // Next.jsの新しいフックをインポート
 import TransactionDetail from '../../../components/TransactionDetail'; // TransactionDetailコンポーネントをインポート
-import { transactionss } from '../../../data'; // ダミーデータをインポート
+import { data } from '../../../data'; // ダミーデータをインポート
 import { Transaction } from '../../../types'; // '../types'からTransaction型をインポート
 
 const TransactionDetailPage: React.FC = () => { // TransactionDetailPageって名前のReact Functional Componentを定義
-  const pathname = usePathname(); // 現在のパスを取得するフックを使ってる
+  const pathname = usePathname(); // 現在のパスを取得するフックを使って状態管理
   const [transaction, setTransaction] = useState<Transaction | undefined>(undefined); // transactionの状態とそれを更新するための関数setTransactionをuseStateフックを使って宣言。初期値はundefined
 
   useEffect(() => {
     const id = pathname?.split("/").pop(); // パス名をスラッシュで分割して、最後の部分（ID）を取得
     if (id) {
-      const foundTransaction = transactionss.find(t => t.id === Number(id)); // IDに一致する取引をダミーデータから探su
+      const foundTransaction = data.find(t => t.id === Number(id)); // IDに一致する取引をダミーデータから探su
       setTransaction(foundTransaction); // 見つかった取引を状態にセット
     }
   }, [pathname]); // パス名が変わるたびにこのエフェクトが実行される

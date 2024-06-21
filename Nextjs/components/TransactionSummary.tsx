@@ -1,9 +1,10 @@
 // app/components/TransactionSummary.tsx
-"use client"; // これをファイルの最初に追加
+"use client"; // クライアントコンポーネントであることを指定
+
 import React, { useState } from 'react'; // ReactとuseStateフックをインポート
 import { Transaction } from '../types'; // '../types' モジュールから 'Transaction' 型をインポー
 
-interface TransactionSummaryProps { // TransactionSummaryコンポーネントのプロパティの型を定義
+interface TransactionSummaryProps { // TransactionSummaryコンポーネントのプロパティの型を定義受け取る型を定義。
   transactions: Transaction[]; // transactionsプロパティはTransaction型の配列
 }
 
