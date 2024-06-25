@@ -1,8 +1,9 @@
-// データ型の定義
+// TypeScriptの型定義を格納するファイル。データモデルやインターフェースの型定義を記述
 export interface Transaction {
   id: number;
   date: string;
-  description: string;
   amount: number;
-  type: 'income' | 'expense';
+  type: string;
+  details: string;
 }
+
